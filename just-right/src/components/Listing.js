@@ -1,3 +1,5 @@
+import dummy from "./images/dummy.png"
+
 // Listing {props} are the same as the parameters for the add_rental function in the backend (minus self)
 function Listing(props) {
     return (
@@ -11,31 +13,33 @@ function Listing(props) {
 }
 
 function ListingProperties(props) {
+    const data = props.listingProperties;
+
     return (
         <div className="listing-properties">
-            <ListingProperty propertyIcon={}
+            <ListingProperty propertyIcon={dummy}
                              propertyName="Landlord Rating"
-                             propertyText={props.landlord_rating}
+                             propertyText={data.landlord_rating}
             >
             </ListingProperty>
-            <ListingProperty propertyIcon={}
+            <ListingProperty propertyIcon={dummy}
                              propertyName="Landlord Review"
-                             propertyText={props.landlord_review}
+                             propertyText={data.landlord_review}
             >
             </ListingProperty>
-            <ListingProperty propertyIcon={}
+            <ListingProperty propertyIcon={dummy}
                              propertyName="Price"
-                             propertyText={props.price}
+                             propertyText={data.price}
             >
             </ListingProperty>
-            <ListingProperty propertyIcon={}
+            <ListingProperty propertyIcon={dummy}
                              propertyName="Rental Rating"
-                             propertyText={props.rental_rating}
+                             propertyText={data.rental_rating}
             >
             </ListingProperty>
-            <ListingProperty propertyIcon={}
+            <ListingProperty propertyIcon={dummy}
                              propertyName="Rental Review"
-                             propertyText={props.rental_review}
+                             propertyText={data.rental_review}
             >
             </ListingProperty>
         </div>
@@ -45,7 +49,11 @@ function ListingProperties(props) {
 function ListingProperty(props) {
     return (
         <div className="listing-property">
-            <img src={props.propertyIcon} alt=""></img>
+            <img src={props.propertyIcon}
+                 alt=""
+                 className="icon"
+            >
+            </img>
             <div className="listing-property-body">
                 <h2>{props.propertyName + ": "}</h2>
                 <h3>{props.propertyText}</h3>
