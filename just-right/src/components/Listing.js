@@ -55,8 +55,8 @@ function ListingProperty(props) {
             >
             </img>
             <div className="listing-property-body">
-                <h2>{props.propertyName + ": "}</h2>
-                <h3>{props.propertyText}</h3>
+                <p className="property-name">{props.propertyName + ": "}</p>
+                <p className="property-text">{props.propertyText}</p>
             </div>
         </div>
     );
