@@ -6,15 +6,20 @@ import Banner from "./components/Banner";
 import Popup from "./components/Popup";
 import ListingPostForm from "./components/ListingPostForm";
 import StickyFooter from "./components/StickyFooter";
+import OrderByForm from "./components/OrderByForm";
 
 function App() {
     const [allRentals, updateAllRentals] = useState([]);
     const [isPostPopupOn, setIsPostPopupOn] = useState(false);
     const [isFilterPopupOn, setIsFilterPopupOn] = useState(false);
+    const [url, updateURL] = useState("/get_all_rentals")
 
+    // for ordering by
+    const [isDescending, updateIsDescending] = useState(false);
+    const [orderBy, setOrderBy] = useState("None");
 
     useEffect(() => {
-        fetch("/get_all_rentals").then(
+        fetch(url).then(
             (res) =>
                 res.json().then(
                     (data) => {
@@ -22,7 +27,7 @@ function App() {
                     }
                 )
         )
-    }, []);
+    }, [url]);
 
     function togglePostPopup() {
         if (!isFilterPopupOn) {
@@ -63,11 +68,19 @@ function App() {
             <Popup toggle={isFilterPopupOn}
                    close={toggleFilterPopup}
             >
-                <h1 className="title">Filter Listings</h1>
+                <h1 className="title">Order Listings</h1>
+                <OrderByForm togglePopup={toggleFilterPopup}
+                             updateURL={updateURL}
+                             orderBy={orderBy}
+                             setOrderBy={setOrderBy}
+                             isDescending={isDescending}
+                             updateIsDescending={updateIsDescending}
+                >
+                </OrderByForm>
             </Popup>
             <StickyFooter>
                 <button onClick={togglePostPopup}>Post Listing</button>
-                <button onClick={toggleFilterPopup}>Filter Listings</button>
+                <button onClick={toggleFilterPopup}>Order Listings</button>
             </StickyFooter>
         </div>
     );
@@ -77,11 +90,11 @@ function App() {
 function rentalToListing(rental, key) {
     return (
         <Listing address={rental["Address"]}
-                 landlord_rating={rental["Landlord Rating"]}
-                 landlord_review={rental["Landlord Review"]}
+                 landlord_rating={rental["LandlordRating"]}
+                 landlord_review={rental["LandlordReview"]}
                  price={rental["Price"]}
-                 rental_rating={rental["Rental Rating"]}
-                 rental_review={rental["Rental Review"]}
+                 rental_rating={rental["RentalRating"]}
+                 rental_review={rental["RentalReview"]}
                  key={key}
         >
         </Listing>

@@ -106,7 +106,7 @@
   border: #003262 5px solid;
 }
 
-.listing-post-form {
+.popup-form {
   display: flex;
   flex-direction: column;
   gap: 20px;

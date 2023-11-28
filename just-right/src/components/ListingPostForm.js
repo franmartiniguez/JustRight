@@ -1,4 +1,5 @@
 import {useState} from "react";
+import LabeledInput from "./LabeledInput";
 
 function ListingPostForm(props) {
 
@@ -31,7 +32,7 @@ function ListingPostForm(props) {
     }
 
     return (
-        <form className="listing-post-form"
+        <form className="popup-form"
               onSubmit={listingPostSubmit}
         >
             <LabeledInput label="Address"
@@ -84,19 +85,6 @@ function ListingPostForm(props) {
             </LabeledInput>
             <input type="submit" value="Post"></input>
         </form>
-    )
-}
-
-function LabeledInput(props) {
-    return (
-        <label className="labeled-input">
-            {props.label + ": "}
-            <input type={props.type}
-                   onChange={props.onChange}
-                   value={props.value}
-            >
-            </input>
-        </label>
     )
 }
 

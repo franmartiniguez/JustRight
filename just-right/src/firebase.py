@@ -25,11 +25,11 @@ class Firebase:
         # Create a document with auto-generated ID
         new_rental_ref = rentals_ref.add({
             'Address': address,
-            'Landlord Rating': landlord_rating,
-            'Landlord Review': landlord_review,
+            'LandlordRating': landlord_rating,
+            'LandlordReview': landlord_review,
             'Price': price,
-            'Rental Rating': rental_rating,
-            'Rental Review': rental_review
+            'RentalRating': rental_rating,
+            'RentalReview': rental_review
         })
     
     def get_all_rentals(self, order_by=None, descending=False):
@@ -37,7 +37,7 @@ class Firebase:
         Retrieve all rentals from the Firestore database.
 
         Parameters:
-        - order_by: str, the field to order by (e.g., 'Price', 'LandlordRating')
+        - order_by: str, the field to order by (e.g., 'Price', 'Landlord Rating')
         - descending: bool, True for descending order, False for ascending order
 
         Returns:
