@@ -13,7 +13,7 @@ function OrderByForm(props) {
         if (props.orderBy === "None") {
             props.updateURL("/get_all_rentals")
         } else {
-            props.updateURL("/get_all_rentals?order_by=" + props.orderBy + "&descending=" + boolString(props.isDescending))
+            props.updateURL("/get_all_rentals?order_by=" + props.orderBy + "&descending=" + boolString(!props.isDescending))
         }
         props.updateIsDescending(prevState => !prevState)
     }
