@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import Listing from "./components/Listing";
 import "./App.css";
+import AppHeader from "./components/AppHeader";
+import Banner from "./components/Banner";
 
 function App() {
     const [allRentals, updateAllRentals] = useState([]);
@@ -18,13 +20,17 @@ function App() {
 
     return (
         <div className="App">
-            {
-                allRentals.map(
-                    (rental, index) => {
-                        return rentalToListing(rental, index)
-                    }
-                )
-            }
+            <AppHeader></AppHeader>
+            <Banner></Banner>
+            <div className="listings">
+                {
+                    allRentals.map(
+                        (rental, index) => {
+                            return rentalToListing(rental, index)
+                        }
+                    )
+                }
+            </div>
         </div>
     );
 }

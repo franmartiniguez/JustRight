@@ -17,15 +17,53 @@
   font-size: 25px;
 }
 
-.listing-property {
+.listing-property, .app-header {
   display: flex;
   flex-direction: row;
   gap: 40px;
   align-items: center;
 }
 
+.app-header-text {
+  font-size: 40px;
+}
+
+.app-header {
+  justify-content: center;
+  gap: 20px;
+  background-color: #003262;
+  color: white;
+}
+
+.listings {
+  margin-left: 20px;
+  height: 100%;
+}
+
+.banner-text {
+  font-size: 55px;
+  text-align: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.41) 0 2.7px 14.283px;
+  margin: 0px;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 1) url("./components/images/campanile.webp") no-repeat center;
+  background-size: cover;
+}
+
+
 .icon {
   width: 80px;
   height: 80px;
   max-width: 80px; min-width: 80px;
 }
+
