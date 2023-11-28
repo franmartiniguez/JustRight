@@ -25,11 +25,11 @@ class Firebase:
         # Create a document with auto-generated ID
         new_rental_ref = rentals_ref.add({
             'Address': address,
-            'LandlordRating': landlord_rating,
-            'LandlordReview': landlord_review,
+            'Landlord Rating': landlord_rating,
+            'Landlord Review': landlord_review,
             'Price': price,
-            'RentalRating': rental_rating,
-            'RentalReview': rental_review
+            'Rental Rating': rental_rating,
+            'Rental Review': rental_review
         })
     
     def get_all_rentals(self, order_by=None, descending=False):

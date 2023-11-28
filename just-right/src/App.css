@@ -2,6 +2,7 @@
   text-align: left;
   font-family: Kollektif;
   color: #003262;
+  border: #003262 10px solid;
 }
 
 @font-face {
@@ -45,7 +46,6 @@
 
 .listings {
   height: 100%;
-  border-collapse: collapse;
 }
 
 .banner-text {
@@ -76,7 +76,11 @@
 
 .title {
   font-size: 60px;
-  margin-left: 20px;
+  text-align: center;
+}
+
+.underline {
+  border-bottom: #003262 5px solid;
 }
 
 .popup {
@@ -90,6 +94,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .popup-body {
@@ -97,6 +102,7 @@
   padding: 32px;
   width: 100%;
   background-color: white;
+  border: #003262 5px solid;
 }
 
 .listing-post-form {
@@ -108,3 +114,4 @@
 .labeled-input {
   margin-left: 20px;
 }
+

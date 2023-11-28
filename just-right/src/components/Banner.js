@@ -2,7 +2,7 @@ import campanile from "./images/campanile.webp"
 
 function Banner() {
     return (
-        <div className="banner"
+        <div className="banner underline"
         >
             <div className="banner-bg"></div>
             <h1 className="banner-text">

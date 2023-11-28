@@ -31,7 +31,9 @@ function App() {
             <AppHeader></AppHeader>
             <Banner></Banner>
             <button onClick={togglePopup}>Post</button>
-            <h1 className="title">Available Listings</h1>
+            <div className="underline">
+                <h1 className="title">Available Listings</h1>
+            </div>
             <div className="listings">
                 {
                     allRentals.map(
@@ -79,6 +81,29 @@ function ListingPostForm(props) {
 
     async function listingPostSubmit(e) {
         e.preventDefault()
+        console.log(
+            {
+                "address": address,
+                "landlord_rating": landlordRating,
+                "landlord_review": landlordReview,
+                "price": price,
+                "rental_rating": rentalRating,
+                "rental_review": rentalReview
+            }
+        )
+        console.log(
+            JSON.stringify(
+                {
+                    "address": address,
+                    "landlord_rating": landlordRating,
+                    "landlord_review": landlordReview,
+                    "price": price,
+                    "rental_rating": rentalRating,
+                    "rental_review": rentalReview
+                }
+            )
+        )
+
         let response = await fetch("/add_rental", {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
@@ -92,9 +117,8 @@ function ListingPostForm(props) {
                     "rental_review": rentalReview
                 }
             )
-        }).then(response => {
-            return response;
         })
+
         props.togglePopup()
     }
 
