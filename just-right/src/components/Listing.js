@@ -4,7 +4,7 @@ import dummy from "./images/dummy.png"
 function Listing(props) {
     return (
         <div className="listing">
-            <h1>{props.address}</h1>
+            <h1 className="address">{props.address}</h1>
             <div className="listing-properties-wrap">
                 <ListingProperties listingProperties={props}></ListingProperties>
             </div>
@@ -29,7 +29,7 @@ function ListingProperties(props) {
             </ListingProperty>
             <ListingProperty propertyIcon={dummy}
                              propertyName="Price"
-                             propertyText={data.price}
+                             propertyText={"$" + data.price}
             >
             </ListingProperty>
             <ListingProperty propertyIcon={dummy}
