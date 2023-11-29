@@ -1,3 +1,142 @@
 .App {
+  text-align: left;
+  font-family: Kollektif;
+  color: #003262;
+  border: #003262 10px solid;
+  margin-bottom: 100px;
+}
+
+@font-face {
+  font-family: Kollektif;
+  src: url("./font/Kollektif.ttf");
+}
+
+.property-name {
+  font-size: 30px;
+}
+
+.property-text {
+  font-size: 25px;
+}
+
+.listing-property, .app-header {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+.listing-property {
+  margin-left: 20px;
+}
+
+.address {
+  margin-left: 20px;
+}
+
+.app-header-text {
+  font-size: 40px;
+}
+
+.app-header {
+  justify-content: center;
+  gap: 20px;
+  background-color: #003262;
+  color: white;
+}
+
+.listings {
+  height: 100%;
+}
+
+.banner-text {
+  font-size: 55px;
   text-align: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.41) 0 2.7px 14.283px;
+  margin: 0px;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 380px;
+  width: 100%;
+  color: white;
+  background: url("./components/images/campanile-transparent.webp") no-repeat center;
+  background-size: cover;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  max-width: 80px; min-width: 80px;
+}
+
+.title {
+  font-size: 60px;
+  text-align: center;
+}
+
+.underline {
+  border-bottom: #003262 5px solid;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.popup-body {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  background-color: white;
+  border: #003262 5px solid;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.labeled-input {
+  margin-left: 20px;
+}
+
+.sticky-footer {
+  background-color: #003262;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  color: white;
+  border: #003262 10px solid;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+button, input[type=submit] {
+  color: white;
+  background-color: #003262;
+  width: 20%;
+  border-radius: 20px;
+  border: solid #0056ab;
+  font-family: Kollektif;
 }

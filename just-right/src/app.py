@@ -15,12 +15,12 @@ def index():
 def add_rental():
     if request.method == 'POST':
         # Retrieve data from the form
-        address = request.form['address']
-        landlord_rating = float(request.form['landlord_rating'])
-        landlord_review = request.form['landlord_review']
-        price = float(request.form['price'])
-        rental_rating = float(request.form['rental_rating'])
-        rental_review = request.form['rental_review']
+        address = request.json['address']
+        landlord_rating = float(request.json['landlord_rating'])
+        landlord_review = request.json['landlord_review']
+        price = float(request.json['price'])
+        rental_rating = float(request.json['rental_rating'])
+        rental_review = request.json['rental_review']
 
         # Add the rental to the database
         firebase_instance.add_rental(address, landlord_rating, landlord_review, price, rental_rating, rental_review)

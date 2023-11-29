@@ -37,7 +37,7 @@ class Firebase:
         Retrieve all rentals from the Firestore database.
 
         Parameters:
-        - order_by: str, the field to order by (e.g., 'Price', 'LandlordRating')
+        - order_by: str, the field to order by (e.g., 'Price', 'Landlord Rating')
         - descending: bool, True for descending order, False for ascending order
 
         Returns:
